@@ -1,0 +1,30 @@
+/*Header style under here*/
+header {
+  margin: 0;
+  border-bottom: 2px solid black;
+}
+
+header h1 {
+  margin: 0;
+  padding: .5em 0;
+  color: blue;
+}
+
+/*Body style under here*/
+body {
+  background-color: white;
+}
+
+/*Footer style under here*/
+footer {
+  clear: both;
+  margin-top: 1em;
+  border-top: 2px solid black;
+}
+
+footer p {
+  text-align: right;
+  font-size: 80%;
+  margin: 1em 0;
+}
+/*# sourceMappingURL=mainstyle.css.map */

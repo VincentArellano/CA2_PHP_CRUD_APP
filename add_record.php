@@ -3,11 +3,13 @@
 // Get the product data
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
-$price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
+$type = filter_input(INPUT_POST, 'type');
+$msrp = filter_input(INPUT_POST, 'msrp', FILTER_VALIDATE_FLOAT);
+$current_price = filter_input(INPUT_POST, 'current_price', FILTER_VALIDATE_FLOAT);
 
 // Validate inputs
 if ($category_id == null || $category_id == false ||
-    $name == null || $price == null || $price == false ) {
+    $name == null || $type == null || $msrp == null || $msrp == false || $current_price == null || $current_price == false) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
     exit();
@@ -63,13 +65,15 @@ if ($category_id == null || $category_id == false ||
 
     // Add the product to the database 
     $query = "INSERT INTO records
-                 (categoryID, name, price, image)
+                 (categoryID, name, type, msrp, current_price, image)
               VALUES
-                 (:category_id, :name, :price, :image)";
+                 (:category_id, :name, :type, :msrp, :current_price, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':name', $name);
-    $statement->bindValue(':price', $price);
+    $statement->bindValue(':type', $type);
+    $statement->bindValue(':msrp', $msrp);
+    $statement->bindValue(':current_price', $current_price);
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();

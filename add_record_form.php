@@ -30,9 +30,17 @@ include('includes/header.php');
             <input type="input" name="name">
             <br>
 
-            <label>List Price:</label>
-            <input type="input" name="price">
-            <br>        
+            <label>Type:</label>
+            <input type="input" name="type">
+            <br>
+
+            <label>MSRP:</label>
+            <input type="input" name="msrp">
+            <br>     
+            
+            <label>Current Price:</label>
+            <input type="input" name="current_price">
+            <br>   
             
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
