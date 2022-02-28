@@ -15,7 +15,12 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
 (1, 'GPU'),
 (2, 'CPU'),
-(3, 'Motherboard');
+(3, 'Motherboard'),
+(4, 'Power Supply'),
+(5, 'Memory'),
+(6, 'Storage'),
+(7, 'Case'),
+(8, 'CPU Cooler');
 
 --
 -- Table structure for table `records`
@@ -36,17 +41,30 @@ CREATE TABLE `records` (
 --
 
 INSERT INTO `records` (`recordID`, `categoryID`, `name`, `description`, `msrp`, `current_price`, `image`) VALUES
-(1, 1, 'Some text', 'GPU asd', '12.00', '10.90', '644471.jpg'),
-(2, 1, 'Some text', 'GPU sas', '12.00', '15.00', '233012.jpg'),
-(3, 1, 'Some text', 'GPU', '12.00', '18.00', '329484.jpg'),
-(4, 1, 'Some text', 'GPU', '12.00', '10.00', '644055.jpg'),
-(5, 2, 'Some text', 'GPU', '12.00', '16.00', '373465.jpg'),
-(6, 2, 'Some text', 'GPU', '12.00', '19.00', '373989.jpg'),
-(7, 2, 'Some text', 'GPU', '12.00', '12.00', '374104.jpg'),
-(8, 2, 'Some text', 'GPU', '12.00', '10.00', '4733.jpg'),
-(9, 2, 'Some text', 'GPU', '12.00', '15.00', '834551.jpg'),
-(10, 3, 'Some text', 'GPU', '12.00', '13.00', '908783.jpg'),
-(11, 3, 'Some text', 'GPU', '12.00', '17.00', '835545.jpg'),
-(12, 3, 'Some text', 'GPU', '12.00', '19.00', '119273.jpg');
+(1, 1, 'EVGA XC Gaming', 'A GeForce RTX 3060 GPU with 12 GB Memory and a 1320 MHz Core Clock and a 1882 MHz Boost Clock', '300', '731.89', '622245.jpg'),
+(2, 1, 'Asus Dual EVO OC', 'A GeForce RTX 2060 GPU with 6 GB Memory and a 1365 MHz Core Clock and a 1785 MHz Boost Clock', '320', '548', '918236.jpg'),
+(3, 1, 'MSI Gaming X', 'A Radeon RX 6600XT GPU with 8 GB Memory and a 1968 MHz Core Clock and a 2607 MHz Boost Clock', '340', '526.04', '430152.jpg'),
+(4, 1, 'EVGA SC Ultra Gaming', 'A GeForce GTX 1660 GPU with 6 GB Memory and a 1530 MHz Core Clock and a 1830 MHz Boost Clock', '400', '408.94', '882436.jpg'),
+(5, 2, 'AMD Ryzen 5 5600X', 'An AMD Ryzen 5 CPU with a 6 core count and a 3.7 GHz core clock and a 4.6 GHz Boost Clock', '280', '237.75', '436929.jpg'),
+(6, 2, 'AMD Ryzen 7 5800X', 'An AMD Ryzen 7 CPU with a 8 core count and a 3.8 GHz core clock and a 4.7 GHz Boost Clock', '410', '329.34', '165876.jpg'),
+(7, 2, 'Intel Core i5-12600K', 'An Intel Core i5 CPU with a 10 core count and a 3.7 GHz core clock and a 4.9 GHz Boost Clock', '330', '298.15', '625053.jpg'),
+(8, 2, 'Intel Core i7-12700K', 'An Intel Core i7 CPU with a 12 core count and a 3.6 GHz core clock and a 5 GHz Boost Clock', '360', '321.11', '354546.jpg'),
+(9, 2, 'AMD Ryzen 9 5900X', 'An AMD Ryzen 9 CPU with a 12 core count and a 3.7 GHz core clock and a 4.8 GHz Boost Clock', '520', '438.22', '701108.jpg'),
+(10, 3, 'Asus TUF Gaming X570-Plus', 'A AM4 Motherboard with a max memory of 128 GB and 4 memory slots', '200', '173.81', '407264.jpg'),
+(11, 3, 'Asus ROG STRIX B550-F Gaming', 'A AM4 Motherboard with a max memory of 128 GB and 4 memory slots', '190', '178.39', '637355.jpg'),
+(12, 3, 'Asus ROG STRIX Z690-A Gaming Wifi D4', 'A LGA1700 Motherboard with a max memory of 128 GB and 4 memory slots', '350', '320.19', '601882.jpg'),
+(13, 4, 'Corsair RMx (2021)', 'A full modular 850W power supply with a 80+ Gold efficiency rating', '140', '104.81', '115204.jpg'),
+(14, 4, 'EVGA BQ', 'A semi modular 600W power supply with a 80+ Bronze efficiency rating', '80', '56.45', '519003.jpg'),
+(15, 4, 'SeaSonic FOCUS Plus Gold', 'A full modular 650W power supply with a 80+ Gold efficiency rating', '100', '96.70', '182403.jpg'),
+(16, 4, 'Cooler Master MWE GOLD V2', 'A full modular 750W power supply with a 80+ Gold efficiency rating', '110', '95.05', '51089.jpg'),
+(17, 5, 'Corsair Vengeance RGB Pro', 'A 2x8 GB RAM with a DDR4-3200 speed and a C16 CAS Latency', '85', '75.64', '72671.jpg'),
+(18, 5, 'G.Skill Ripjaws V', 'A 2x16 GB RAM with a DDR4-3600 speed and a C16 CAS Latency', '250', '264.31', '863449.jpg'),
+(19, 6, 'Samsung 970 Evo Plus', 'A 1TB SSD that is a M.2 interface', '120', '100.25', '157473.jpg'),
+(20, 6, 'Seagate Barracuda Compute', 'A 2TB HDD that is a SATA interface', '60', '42.83', '508616.jpg'),
+(21, 6, 'Western Digital Blue SN550', 'A 1TB SSD that is a M.2', '115', '86.58', '75985.jpg'),
+(22, 7, 'NZXT H510', 'A White ATX Mid Tower that had a tempered glass window', '110', '91.14', '44527.jpg'),
+(23, 7, 'Phanteks Eclipse P300A Mesh', 'A Black ATX Mid Tower that had a tempered glass window', '140', '123.45', '914180.jpg'),
+(24, 8, 'Cooler Master Hyper 212 RGB', 'A 650 - 2000 RPM fan with a noise level ranging from 8 - 30 dB', '50', '45.56', '725077.jpg'),
+(25, 8, 'Corsair iCUE H150i Elite Capellix', 'A 2400 RPM fan with a noise level ranging from 10 - 37 dB', '190', '173.16', '885115.jpg');
 
 
