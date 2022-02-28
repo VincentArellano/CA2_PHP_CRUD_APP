@@ -30,8 +30,8 @@ include('includes/header.php');
             <input type="input" name="name">
             <br>
 
-            <label>Type:</label>
-            <input type="input" name="type">
+            <label>Description:</label>
+            <input type="input" name="description">
             <br>
 
             <label>MSRP:</label>

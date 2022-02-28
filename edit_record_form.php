@@ -2,11 +2,13 @@
 require('database.php');
 
 $record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
+$category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $query = 'SELECT *
-          FROM records
+          FROM records join categories using(categoryID)
           WHERE recordID = :record_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':record_id', $record_id);
+$statement->bindValue(':categories_id', $categories_id);
 $statement->execute();
 $records = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
@@ -23,9 +25,14 @@ include('includes/header.php');
             <input type="hidden" name="record_id"
                    value="<?php echo $records['recordID']; ?>">
 
-            <label>Category ID:</label>
-            <input type="category_id" name="category_id"
-                   value="<?php echo $records['categoryID']; ?>">
+                   <label>Category:</label>
+            <select name="category_id">
+            <?php foreach ($categories as $category) : ?>
+                <option value="<?php echo $category['categoryID']; ?>">
+                    <?php echo $category['categoryName']; ?>
+                </option>
+            <?php endforeach; ?>
+            </select>
             <br>
 
             <label>Name:</label>
@@ -33,9 +40,19 @@ include('includes/header.php');
                    value="<?php echo $records['name']; ?>">
             <br>
 
-            <label>List Price:</label>
-            <input type="input" name="price"
-                   value="<?php echo $records['price']; ?>">
+            <label>Description:</label>
+            <input type="input" name="description"
+                   value="<?php echo $records['description']; ?>">
+            <br>
+
+            <label>MSRP:</label>
+            <input type="input" name="msrp"
+                   value="<?php echo $records['msrp']; ?>">
+            <br>
+
+            <label>Current Price:</label>
+            <input type="input" name="current_price"
+                   value="<?php echo $records['current_price']; ?>">
             <br>
 
             <label>Image:</label>
