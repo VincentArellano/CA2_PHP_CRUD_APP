@@ -48,12 +48,12 @@ include('includes/header.php');
 
             <label>Description:</label>
             <input type="input" name="description"
-                   value="<?php echo $records['description']; ?>" placeholder="Description" required>
+                   value="<?php echo $records['description']; ?>" placeholder="Description">
             <br>
 
             <label>MSRP:</label>
             <input type="input" name="msrp"
-                   value="<?php echo $records['msrp']; ?>" placeholder="Manufacturer's Suggested Retail Price (MSRP)" required>
+                   value="<?php echo $records['msrp']; ?>" placeholder="Manufacturer's Suggested Retail Price (MSRP)">
             <br>
 
             <label>Current Price:</label>
@@ -72,7 +72,7 @@ include('includes/header.php');
             <input type="submit" value="Save Changes">
             <br>
         </form>
-        <p><a href="index.php">View Homepage</a></p>
+        <p><a href="index.php">Cancel</a></p>
     <?php
 include('includes/footer.php');
 ?>

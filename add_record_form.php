@@ -47,10 +47,10 @@ include('includes/header.php');
             <br>
             
             <label>&nbsp;</label>
-            <input type="submit" value="Add Record">
+            <input type="submit" value="Add Record" >
             <br>
         </form>
-        <p><a href="index.php">View Homepage</a></p>
+        <p><a href="index.php">Cancel</a></p>
     <?php
 include('includes/footer.php');
 ?>

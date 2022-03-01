@@ -79,5 +79,6 @@ if ($category_id == null || $category_id == false ||
     $statement->closeCursor();
 
     // Display the Product List page
+    
     include('index.php');
 }
