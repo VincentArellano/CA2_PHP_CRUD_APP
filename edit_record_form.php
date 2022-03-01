@@ -43,26 +43,26 @@ include('includes/header.php');
 
             <label>Name:</label>
             <input type="input" name="name"
-                   value="<?php echo $records['name']; ?>">
+                   value="<?php echo $records['name']; ?>" required>
             <br>
 
             <label>Description:</label>
             <input type="input" name="description"
-                   value="<?php echo $records['description']; ?>">
+                   value="<?php echo $records['description']; ?>" required>
             <br>
 
             <label>MSRP:</label>
             <input type="input" name="msrp"
-                   value="<?php echo $records['msrp']; ?>">
+                   value="<?php echo $records['msrp']; ?>" required>
             <br>
 
             <label>Current Price:</label>
             <input type="input" name="current_price"
-                   value="<?php echo $records['current_price']; ?>">
+                   value="<?php echo $records['current_price']; ?>" required>
             <br>
 
             <label>Image:</label>
-            <input type="file" name="image" accept="image/*" />
+            <input type="file" name="image" accept="image/*"/>
             <br>            
             <?php if ($records['image'] != "") { ?>
             <p><img src="image_uploads/<?php echo $records['image']; ?>" height="150" /></p>

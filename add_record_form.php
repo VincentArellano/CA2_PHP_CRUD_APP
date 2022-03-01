@@ -27,23 +27,23 @@ include('includes/header.php');
             </select>
             <br>
             <label>Name:</label>
-            <input type="input" name="name">
+            <input type="input" name="name" required>
             <br>
 
             <label>Description:</label>
-            <input type="input" name="description">
+            <input type="input" name="description" required>
             <br>
 
             <label>MSRP:</label>
-            <input type="input" name="msrp">
+            <input type="input" name="msrp" required>
             <br>     
             
             <label>Current Price:</label>
-            <input type="input" name="current_price">
+            <input type="input" name="current_price" required>
             <br>   
             
             <label>Image:</label>
-            <input type="file" name="image" accept="image/*" />
+            <input type="file" name="image" accept="image/*"  required/>
             <br>
             
             <label>&nbsp;</label>
