@@ -27,19 +27,19 @@ include('includes/header.php');
             </select>
             <br>
             <label>Name:</label>
-            <input type="input" name="name" required>
+            <input type="input" name="name" placeholder="Name" required>
             <br>
 
             <label>Description:</label>
-            <input type="input" name="description" required>
+            <input type="input" name="description" placeholder="Description" required>
             <br>
 
             <label>MSRP:</label>
-            <input type="input" name="msrp" required>
+            <input type="input" name="msrp" placeholder="Manufacturer's Suggested Retail Price (MSRP)" required>
             <br>     
             
             <label>Current Price:</label>
-            <input type="input" name="current_price" required>
+            <input type="input" name="current_price" placeholder="Current Price" required>
             <br>   
             
             <label>Image:</label>

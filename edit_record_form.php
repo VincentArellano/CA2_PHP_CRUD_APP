@@ -43,22 +43,22 @@ include('includes/header.php');
 
             <label>Name:</label>
             <input type="input" name="name"
-                   value="<?php echo $records['name']; ?>" required>
+                   value="<?php echo $records['name']; ?>" placeholder="Name" required>
             <br>
 
             <label>Description:</label>
             <input type="input" name="description"
-                   value="<?php echo $records['description']; ?>" required>
+                   value="<?php echo $records['description']; ?>" placeholder="Description" required>
             <br>
 
             <label>MSRP:</label>
             <input type="input" name="msrp"
-                   value="<?php echo $records['msrp']; ?>" required>
+                   value="<?php echo $records['msrp']; ?>" placeholder="Manufacturer's Suggested Retail Price (MSRP)" required>
             <br>
 
             <label>Current Price:</label>
             <input type="input" name="current_price"
-                   value="<?php echo $records['current_price']; ?>" required>
+                   value="<?php echo $records['current_price']; ?>" placeholder="Current Price" required>
             <br>
 
             <label>Image:</label>
