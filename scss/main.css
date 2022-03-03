@@ -328,6 +328,8 @@ label {
 	display: flex;
   }
 
-  .btn:hover{
+  .button:hover{
 	text-decoration: none;
+	color: black;
+	background-color: lightgray;
   }
