@@ -1,4 +1,13 @@
-
+<head>
+<link rel="stylesheet" type="text/css" href="scss/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
 <?php
 require_once('database.php');
 
@@ -39,40 +48,48 @@ $statement3->execute();
 $records = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
-<div class="container">
+<div>
 <?php
 include('includes/header.php');
 ?>
-<h1>Parts List</h1>
-
-<aside>
-<!-- display a list of categories -->
-<h2>Categories</h2>
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
-<li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
+<li><a style="text-decoration: none;" href=".?category_id=<?php echo $category['categoryID']; ?>">
 <?php echo $category['categoryName']; ?>
 </a>
 </li>
 <?php endforeach; ?>
 </ul>
-</nav>          
-</aside>
+</nav>      
 
-<section>
 <!-- display a table of records -->
-<h2><?php echo $category_name; ?></h2>
-<table>
+<div class="container-xl">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+                    <h2><?php echo $category_name; ?></h2>
+					</div>
+					<div class="col-sm-6">
+						<a href="add_record_form.php" class="btn btn-color"><i class="material-icons">&#xE147;</i><span>Add New Part</span></a>
+                        <a href="category_list.php" class="btn btn-color"><span>Manage Categories</span></a>	
+					</div>
+				</div>
+			</div>
+<table class="table table-striped table-hover">
+    <thead>
 <tr>
 <th>Image</th>
 <th>Name</th>
 <th>Description</th>
 <th>MSRP</th>
 <th>Current Price</th>
-<th>Delete</th>
-<th>Edit</th>
+<th><i class="material-icons" title="Delete">&#xE872;</i>Delete</th>
+<th><i class="material-icons" title="Edit">&#xE254;</i>Edit</th>
 </tr>
+</thead>
 <?php foreach ($records as $record) : ?>
 <tr>
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
@@ -80,15 +97,17 @@ include('includes/header.php');
 <td class="right"><?php echo $record['description']; ?></td>
 <td class="right">€<?php echo $record['msrp']; ?></td>
 <td class="right">€<?php echo $record['current_price']; ?></td>
+
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="record_id"
 value="<?php echo $record['recordID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Delete">
+<input type="submit" value="Delete" class="delete">
 </form></td>
-<td><form action="edit_record_form.php" method="post"
+
+<td><form class="edit" action="edit_record_form.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="record_id"
 value="<?php echo $record['recordID']; ?>">
@@ -99,9 +118,9 @@ value="<?php echo $record['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Record</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>
-</section>
+</div>
+	</div>        
+</div>
 <?php
 include('includes/footer.php');
 ?>

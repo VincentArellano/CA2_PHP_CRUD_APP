@@ -10,12 +10,17 @@
     $statement->closeCursor();
 ?>
 <!-- the head section -->
+<head>
+    <link rel="stylesheet" type="text/css" href="scss/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
 <div class="container">
 <?php
 include('includes/header.php');
 ?>
     <h1>Category List</h1>
-    <table>
+    <table style="margin: 0 auto;">
         <tr>
             <th>Name</th>
             <th>&nbsp;</th>
@@ -28,7 +33,7 @@ include('includes/header.php');
                       id="delete_product_form">
                     <input type="hidden" name="category_id"
                            value="<?php echo $category['categoryID']; ?>">
-                    <input type="submit" value="Delete">
+                    <input class="margin-left" type="submit" value="Delete">
                 </form>
             </td>
         </tr>
@@ -36,16 +41,15 @@ include('includes/header.php');
     </table>
     <br>
 
-    <h2>Add Category</h2>
-    <form action="add_category.php" method="post"
+    <h2 style="text-align: center;">Add Category</h2>
+    <form style="text-align: center;" action="add_category.php" method="post"
           id="add_category_form">
 
         <label>Name:</label>
         <input type="input" name="name">
         <input id="add_category_button" type="submit" value="Add">
+        <div class="padding-top add-button"><a style="text-decoration: none;" href="index.php" class="button">Cancel</a></div>
     </form>
-    <br>
-    <p><a href="index.php">Homepage</a></p>
 
     <?php
 include('includes/footer.php');
