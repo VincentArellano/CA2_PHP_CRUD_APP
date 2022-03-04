@@ -68,3 +68,14 @@ INSERT INTO `records` (`recordID`, `categoryID`, `name`, `description`, `msrp`, 
 (25, 8, 'Corsair iCUE H150i Elite Capellix', 'A 2400 RPM fan with a noise level ranging from 10 - 37 dB', '190', '173.16', '885115.jpg');
 
 
+CREATE TABLE `reviews` (
+  `reviewID` int(11) AUTO_INCREMENT PRIMARY KEY,
+  `recordID` int(11) NOT NULL,
+  `reviewName` varchar(255) NOT NULL,
+  `comment` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `reviews` (`reviewID`, `recordID`, `reviewName`, `comment`) VALUES
+(1, 1, 'Vincent Arellano', 'This GPU is great for gaming but over all is selling for higher the price'),
+(2, 1, 'John Smith', 'This GPU generates better performaces'),
+(3, 2, "Damien O'Rielly", 'This is great for its price.');

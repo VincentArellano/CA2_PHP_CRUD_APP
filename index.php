@@ -86,8 +86,9 @@ include('includes/header.php');
 <th>Description</th>
 <th>MSRP</th>
 <th>Current Price</th>
-<th><i class="material-icons" title="Delete">&#xE872;</i>Delete</th>
-<th><i class="material-icons" title="Edit">&#xE254;</i>Edit</th>
+<th>Delete</th>
+<th>Edit</th>
+<th>Reviews</th>
 </tr>
 </thead>
 <?php foreach ($records as $record) : ?>
@@ -114,6 +115,15 @@ value="<?php echo $record['recordID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $record['categoryID']; ?>">
 <input type="submit" value="Edit">
+</form></td>
+
+<td><form class="review" action="reviews.php" method="post"
+id="reviews">
+<input type="hidden" name="record_id"
+value="<?php echo $record['recordID']; ?>">
+<input type="hidden" name="category_id"
+value="<?php echo $record['categoryID']; ?>">
+<input type="submit" value="Reviews">
 </form></td>
 </tr>
 <?php endforeach; ?>
