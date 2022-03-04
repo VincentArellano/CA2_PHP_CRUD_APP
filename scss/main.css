@@ -315,6 +315,11 @@ label {
 .margin-left{
 	margin-left: 25px;
 }
+
+.reviews{
+	border-top: 2px solid black;
+	padding-bottom: 20px;
+}
 .button {
 	
 	background-color: #EEEEEE;
@@ -332,4 +337,13 @@ label {
 	text-decoration: none;
 	color: black;
 	background-color: lightgray;
+  }
+
+  .reviewName{
+	padding-top: 20px;
+  }
+
+  .reviewComment{
+	  padding-bottom: 20px;
+	  
   }

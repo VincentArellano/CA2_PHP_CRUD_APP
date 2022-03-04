@@ -51,15 +51,13 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-    <h1>Review for <?php echo $record_name; ?></h1>
+    <h1>Reviews for <?php echo $record_name; ?></h1>
     <table style="margin: 0 auto;">
-        <tr>
-            <th>Name</th>
-            <th>&nbsp;</th>
-        </tr>
         <?php foreach ($reviews as $review) : ?>
         <tr>
-            <td><?php echo $review['reviewName']; ?></td>
+            <td style="padding-top: 35px;"><?php echo $review['reviewName']; ?></td>
+        </tr>
+            <tr>
             <td><?php echo $review['comment']; ?></td>
             <td>
                 <form action="delete_review.php" method="post"
@@ -80,7 +78,7 @@ include('includes/header.php');
 
         <label>Name:</label>
         <input type="input" name="name" required>
-        <label>Add Review:</label>
+        <label class="ml-3">Add Review:</label>
         <input type="input" name="comment" required>
         <input type="hidden" name="record_id"
 value="<?php echo $record['recordID']; ?>">
