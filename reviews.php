@@ -40,6 +40,15 @@ $statement3->bindValue(':record_id', $record_id);
 $statement3->execute();
 $reviews = $statement3->fetchAll();
 $statement3->closeCursor();
+
+$queryRecord = "SELECT Count(*) FROM reviews 
+Where recordID = :record_id";
+$statement2 = $db->prepare($queryRecord);
+$statement2->bindValue(':record_id', $record_id);
+$statement2->execute();
+$count = $statement2->fetchColumn();
+$statement2->closeCursor();
+
 ?>
 <!-- the head section -->
 <head>
@@ -51,11 +60,12 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-    <h1>Reviews for <?php echo $record_name; ?></h1>
-    <table style="margin: 20px; border: 1px solid #898F9C; border-radius: 20px;">
+    <table style="margin: 20px; border: 1px solid #898F9C; margin-top: 0px;">
+    <h2 style="margin: 0px 20px; border: 1px solid #898F9C; padding: 15px;">
+    <?php echo $count; ?> Reviews for  <?php echo $record_name; ?></h2>
         <?php foreach ($reviews as $review) : ?>
         <tr>
-            <td style="padding: 15px;"><?php echo $review['reviewName']; ?></td>
+            <td style="padding: 15px; font-size: 1.5em;"><?php echo $review['reviewName']; ?></td>
         </tr>
             <tr style="border-bottom: 1px solid #898F9C;">
             <td style="padding: 15px;"><?php echo $review['comment']; ?></td>
