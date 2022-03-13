@@ -18,6 +18,6 @@ if ($category_id == null || $category_id == false) {
     $statement->closeCursor();
 
     // Display the Category List page
-    include('index.php');
+    include('category_list.php');
 }
 ?>

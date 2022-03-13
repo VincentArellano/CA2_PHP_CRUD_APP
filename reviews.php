@@ -52,16 +52,16 @@ $statement3->closeCursor();
 include('includes/header.php');
 ?>
     <h1>Reviews for <?php echo $record_name; ?></h1>
-    <table style="margin: 0 auto;">
+    <table style="margin: 20px; border: 1px solid #898F9C; border-radius: 20px;">
         <?php foreach ($reviews as $review) : ?>
         <tr>
-            <td style="padding-top: 35px;"><?php echo $review['reviewName']; ?></td>
+            <td style="padding: 15px;"><?php echo $review['reviewName']; ?></td>
         </tr>
-            <tr>
-            <td><?php echo $review['comment']; ?></td>
+            <tr style="border-bottom: 1px solid #898F9C;">
+            <td style="padding: 15px;"><?php echo $review['comment']; ?></td>
             <td>
                 <form action="delete_review.php" method="post"
-                      id="delete_review_form">
+                      id="delete_review_form" style="padding: 15px;">
                     <input type="hidden" name="review_id"
                            value="<?php echo $review['reviewID']; ?>">
                     <input class="margin-left" type="submit" value="Delete">

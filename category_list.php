@@ -48,7 +48,7 @@ include('includes/header.php');
         <label>Name:</label>
         <input type="input" name="name" requried>
         <input id="add_category_button" type="submit" value="Add">
-        <div class="padding-top add-button"><a style="text-decoration: none;" href="index.php" class="button">Cancel</a></div>
+        <div class="padding-top add-button"><a style="text-decoration: none;" href="index.php" class="button">Back</a></div>
     </form>
 
     <?php
