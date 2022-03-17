@@ -52,7 +52,7 @@ $statement2->closeCursor();
 ?>
 <!-- the head section -->
 <head>
-    <link rel="stylesheet" type="text/css" href="scss/main.css">
+<link rel="stylesheet" type="text/css" href="./scss/mainstyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
@@ -60,18 +60,18 @@ $statement2->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-    <table style="margin: 20px; border: 1px solid #898F9C; margin-top: 0px;">
-    <h2 style="margin: 0px 20px; border: 1px solid #898F9C; padding: 15px;">
+    <table class="reviewTable">
+    <h2>
     <?php echo $count; ?> Reviews for  <?php echo $record_name; ?></h2>
         <?php foreach ($reviews as $review) : ?>
         <tr>
-            <td style="padding: 15px; font-size: 1.5em;"><?php echo $review['reviewName']; ?></td>
+            <td class="reviewName"><?php echo $review['reviewName']; ?></td>
         </tr>
-            <tr style="border-bottom: 1px solid #898F9C;">
-            <td style="padding: 15px;"><?php echo $review['comment']; ?></td>
+            <tr class="trComment">
+            <td class="reviewComment"><?php echo $review['comment']; ?></td>
             <td>
                 <form action="delete_review.php" method="post"
-                      id="delete_review_form" style="padding: 15px;">
+                      id="delete_review_form" class="reviewDelete">
                     <input type="hidden" name="review_id"
                            value="<?php echo $review['reviewID']; ?>">
                     <input class="margin-left" type="submit" value="Delete">
@@ -82,8 +82,8 @@ include('includes/header.php');
     </table>
     <br>
 
-    <h2 style="text-align: center;">Add Review</h2>
-    <form style="text-align: center;" action="add_review.php" method="post"
+    <h2 class="addHeader">Add Review</h2>
+    <form class="addHeader" action="add_review.php" method="post"
           id="add_review_form">
 
         <label>Name:</label>
@@ -93,7 +93,7 @@ include('includes/header.php');
         <input type="hidden" name="record_id"
 value="<?php echo $record['recordID']; ?>">
         <input id="add_review_button" type="submit" value="Add">
-        <div class="padding-top add-button"><a style="text-decoration: none;" href="index.php" class="button">Back</a></div>
+        <div class="padding-top add-button"><a class="Addbutton" href="index.php" class="button">Back</a></div>
     </form>
 
     <?php
