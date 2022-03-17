@@ -1,0 +1,44 @@
+/*Review style under here*/
+.reviewName{
+    padding: 15px; 
+    font-size: 1.5em;
+  }
+
+  .reviewComment{
+    padding: 15px;
+	  
+  }
+
+  .reviewDelete{
+    padding: 15px;
+  }
+
+  .trComment{
+    border-bottom: 1px solid #898F9C;
+  }
+
+
+  .reviews{
+	border-top: 2px solid black;
+	padding-bottom: 20px;
+}
+
+.reviewTable{
+    margin: 20px; 
+    border: 1px solid #898F9C; 
+    margin-top: 0px;
+    h2{
+        margin: 0px 20px; 
+        border: 1px solid #898F9C;
+        padding: 15px;
+    }
+
+}
+
+.addHeader{
+    text-align: center;
+}
+
+.Addbutton{
+    text-decoration: none;
+}
