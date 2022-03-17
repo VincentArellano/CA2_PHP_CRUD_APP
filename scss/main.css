@@ -132,7 +132,7 @@ ul {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #566787;
+	background-color: #435d7d;
   }
   
   li {
@@ -148,8 +148,8 @@ ul {
   }
   
   li a:hover {
-	background-color: #4464a3;
-	color: #898F9C;
+	background-color: #566787;
+	color: black;
   }
 
   h1 {
@@ -183,6 +183,9 @@ label {
 	background-color: white;
 }
 
+.btn:hover{
+	color: #898F9C;
+}
 .add-button{
 	display: inline-block;
 	
