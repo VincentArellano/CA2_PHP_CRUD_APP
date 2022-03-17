@@ -61,8 +61,7 @@ $statement2->closeCursor();
 include('includes/header.php');
 ?>
     <table class="reviewTable">
-    <h2>
-    <?php echo $count; ?> Reviews for  <?php echo $record_name; ?></h2>
+    <h2 class="reviewHeader"><?php echo $count; ?> Reviews for  <?php echo $record_name; ?></h2>
         <?php foreach ($reviews as $review) : ?>
         <tr>
             <td class="reviewName"><?php echo $review['reviewName']; ?></td>
@@ -93,7 +92,7 @@ include('includes/header.php');
         <input type="hidden" name="record_id"
 value="<?php echo $record['recordID']; ?>">
         <input id="add_review_button" type="submit" value="Add">
-        <div class="padding-top add-button"><a class="Addbutton" href="index.php" class="button">Back</a></div>
+        <div class="backButton"><a class="Addbutton button" href="index.php" class="button">Back</a></div>
     </form>
 
     <?php
